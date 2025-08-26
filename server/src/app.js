@@ -26,4 +26,7 @@ app.use(cors(corsOptions));
 app.use('/payment/stripe-callback', bodyParser.raw({ type: '*/*' }));
 app.use(bodyParser.json({ limit: '50mb' }));
 
+const walletRoutes = require('./routes/googleWalletRoutes');
+app.use('/wallet', walletRoutes);
+
 module.exports = app;
